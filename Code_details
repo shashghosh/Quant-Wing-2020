@@ -1,0 +1,23 @@
+Q1: Binomial call price of option is calculated using the same logic as pseudocode in the question paper. 
+    Some of the pseudocode had to be modified as I could not implement it directly in Python, used resources online to find solution for the issue.
+
+Q2: It is a simple MACD strategy which uses consecutive fibonacci numbers as parameters for signal lines and MACD.
+    Alpha, CAGR, Sharpe ratio, Win% and total number of trades are the performance measures used
+    Performs best on an intermediate timeframe of 6 months to 2 years. 
+    Performs poorly when markets trade flat.
+    I initially did try to use RSI, ADX and OBV as well but found that using just the MACD with these parameters produced the best results.
+    
+Q3: Solved the portfolio optimization problem using Markowitz efficient frontier. Iterated through all the possible combinations of stocks and constructed the 
+    Markowitz efficient frontier for each combination of stocks. Extracted the portfolio with the least volatility from each combination of stocks and stored it in a list.
+    Found the portfolio with least volatility in this list of low volatility portfolios. This portfolio was the optimum portfolio with maximum diversification.
+    This portfolio was found to be : 
+    
+    Combination with lowest risk is:('MSFT'- 3.91%, 'AMZN' - 23.09%, 'JNJ' - 13.90%, 'VZ' - 49.12%, 'PFE' - 9.98%)
+    Their weights respectively are: [0.03911324 0.23097232 0.13895623 0.49120624 0.09975197]
+    Returns generated from this portfolio:  26.84%
+    Volatility of portfolio:  24.09%
+    
+    Note: The weights might differ slightly if more number of iterations are taken per portfolio
+    
+    The program takes about 30 minutes to run on my system as it involved 1.5 million iterations(15504 combinations x 100 iterations per combination). So far I have been unable to
+    come up with a more efficient method to code this. 
